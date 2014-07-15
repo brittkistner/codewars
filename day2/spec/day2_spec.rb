@@ -9,3 +9,14 @@ describe 'solution' do
     expect(solution('ab')).to eq([])
   end
 end
+
+# def solution(nums)
+#   Array(nums).sort
+# end
+
+describe 'sort_gift_code' do
+  it 'takes a string and returns the string in alphabetical order' do
+    expect(sort_gift_code("asofafdjhk")).to eq("aadffhjkos")
+  end
+end
+
