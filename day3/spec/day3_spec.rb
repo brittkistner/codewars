@@ -12,4 +12,8 @@ describe 'get_squares' do
   end
 end
 
-
+describe 'change' do
+  it 'should return 11 followed by 24 zeros' do
+    expect(change("ab")).to eq("11000000000000000000000000")
+  end
+end

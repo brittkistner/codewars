@@ -29,6 +29,7 @@ end
 
 # Add the value "codewars" to the websites array.
 # After your code executes the websites array should == ["codewars"]
+websites = []
 websites << "codewars"
 
 # String search
@@ -47,13 +48,25 @@ websites << "codewars"
 
 def change(str)
   if str.class == String
-    #convert to an array and then iterate through array
     array = str.split(//)
+    binary = Array.new(26, 0)
     array.uniq.sort!
+    base = "a".ord
+    base_upcase = "A".ord
     array.each do |x|
-      # if /[[:alpha:]]/.match(x)
-
-
+      if (65..90).include?(x.ord)
+        binary[x.ord - base_upcase] = 1
+      elsif (97..122).include?(x.ord)
+        binary[x.ord - base] = 1
+      end
+    end
+  end
+  binary.join('')
 end
+
+# Alternative:
+# def change a
+#   ('a'..'z').to_a.map { |x| a.downcase.include?(x) ? 1 : 0 }.join
+# end
 
 
