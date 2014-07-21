@@ -30,3 +30,13 @@ describe 'keys_and_values' do
     expect(keys_and_values({a: 1, b: 2, c: 3})).to eq([[:a, :b, :c], [1, 2, 3]])
   end
 end
+
+describe 'solution' do
+  it 'should try and retrieve the value of the array at the index provided. If the index is out of the arrays max bounds then it should return the default value instead.' do
+    expect(solution(['a','b','c'],0,'d')).to eq('a')
+
+    expect(solution(['a','b','c'],5,'d')).to eq('d')
+
+    expect(solution(['a','b','c'],-3,'d')).to eq('a')
+  end
+end
