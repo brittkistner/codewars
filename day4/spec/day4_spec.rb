@@ -25,3 +25,8 @@ describe 'no_odds' do
   end
 end
 
+describe 'keys_and_values' do
+  it 'takes in an object and returns the keys and values as separate arrays' do
+    expect(keys_and_values({a: 1, b: 2, c: 3})).to eq([[:a, :b, :c], [1, 2, 3]])
+  end
+end

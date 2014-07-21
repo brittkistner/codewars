@@ -25,19 +25,6 @@ end
 #   end
 # end
 #################
-# Complete the solution so that it returns a formatted string. The return value should equal "Value is VALUE" where value is a 5 digit padded number.
-def solution(value)
-  #return 5 padded solution
-  #Value is VALUE
-  #.to_s
-  #split string into an array
-  #count the array length
-
-  #push the last number of value into the back of a new array
-  #continue to do this
-
-end
-#################
 # Complete the function so that it returns the number of seconds that have elapsed between the start and end times given.
 
 # Tips:
@@ -75,3 +62,15 @@ end
 # Example:
 
 # keysAndValues({a: 1, b: 2, c: 3}) # should return [[:a, :b, :c], [1, 2, 3]]
+
+def keys_and_values(hash)
+  array = []
+  array << hash.keys
+  array << hash.values
+  array
+end
+
+# Alternative:
+# def keysAndValues(data)
+#   [data.keys, data.values]
+# end
