@@ -68,15 +68,15 @@ end
 # solution([{a: 1}, {a: 5}, {a: 3}], :a)
 # # => [{a:1}, {a: 3}, {a: 5}]
 
+def sort_hashes(array, key)
+  array.sort_by do |x|
+    x.values
+  end
+end
+
+# Alternative:
 # def solution(array, key)
-#   array.map! do |x|
-#     if x.keys == key
-#       x
-#     end
-#   end
-#   array.map! do |x|
-#     if x
-#       #sort???
+#   array.sort_by {|a| a[key]}
 # end
 
 

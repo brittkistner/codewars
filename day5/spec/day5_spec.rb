@@ -31,3 +31,9 @@ describe 'sort_array' do
     expect(sort_array([40,1,50])).to eq([1,40,50])
   end
 end
+
+describe 'sort_hashes' do
+  it 'sorts an array of hashes by value and returns the array' do
+    expect(sort_hashes([{a: 1}, {a: 5}, {a: 3}], :a)).to eq([{a:1}, {a: 3}, {a: 5}])
+  end
+end
