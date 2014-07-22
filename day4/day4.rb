@@ -35,7 +35,7 @@ end
 require 'time'
 
 def elapsed_seconds(start_time, end_time)
-  end_time.sec - start_time.sec
+  end_time.tv_sec - start_time.tv_sec
 end
 ###################
 # Create a method that accepts an array of names, and returns an array of each name with its first letter capitalized.
