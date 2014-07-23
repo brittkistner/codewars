@@ -39,9 +39,9 @@ end
 
 # Alternative:
 
-# def solution(value)
-#   "Value is %.5d" % value
-# end
+def solution(value)
+  "Value is %-05d" % value
+end
 #####################
 
 # Finish the solution so that it sorts the passed in array of numbers. If the function passes in an empty array or null/nil value then it should return an empty array.
