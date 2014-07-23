@@ -31,3 +31,49 @@ end
 
 #http://apidock.com/ruby/Module/define_method
 
+######################
+# Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string on the outside and the longer string on the inside. The strings will not be the same length, but they may be empty (length0).
+
+# For example:
+
+# solution("1", "22") # returns "1221"
+# solution("22", "1") # returns "1221"
+
+def solution(a, b)
+  a.size > b.size ? b+a+b : a+b+a
+end
+
+######################
+
+# You probably know, that in Javascript (and also Ruby) there is no concept of interfaces. There is only a concept of inheritance, but you can't assume that a certain method or property exists, just because it exists in the parent prototype / class. We want to find out, whether a given object fulfils the requirements to implement the "SantaClausable" interface. We need to implement a method which checks for this interface.
+
+# Rules
+
+# The SantaClausable interface is implemented, if all of the following methods are defined on an object:
+
+# sayHoHoHo() / say_ho_ho_ho
+# distributeGifts() / distribute_gifts
+# goDownTheChimney() / go_down_the_chimney
+# Example
+
+# class NotSantaClaus
+#     def say_ho_ho_ho
+#     end
+# end
+
+# is_santa_clausable(SantaClaus.new) # must return TRUE
+# is_santa_clausable(NotSantaClaus.new) # must return FALSE
+
+def is_santa_clausable(obj)
+  if obj.methods.include?(:say_ho_ho_ho) && obj.methods.include?(:distribute_gifts) && obj.methods.include?(:go_down_the_chimney)
+    return true
+  else
+    false
+  end
+end
+
+# Best Practices:
+
+# def is_santa_clausable(obj)
+#   [ :say_ho_ho_ho, :distribute_gifts, :go_down_the_chimney ].all? { |m| obj.respond_to?(m) }
+# end
