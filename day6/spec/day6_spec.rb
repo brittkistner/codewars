@@ -1,8 +1,8 @@
 require './day6.rb'
 
 describe 'get_squares' do
-  xit 'return an array of numbers from the array that qualify as perfect squares' do
-    expect(get_squares(1..16)).to eq([1, 4, 9, 16])
+  it 'return an array of numbers from the array that qualify as perfect squares' do
+    expect(get_squares((1..16))).to eq([1, 4, 9, 16])
   end
 end
 
@@ -38,11 +38,11 @@ describe 'SantaClausable Interface' do
     end
   end
 
-  it 'should implement the SantaClausable interface' do
+  xit 'should implement the SantaClausable interface' do
     Test.assert_equals is_santa_clausable(SantaClaus.new), true
   end
 
-  it 'should not implement the SantaClausable interface' do
+  xit 'should not implement the SantaClausable interface' do
     Test.assert_equals is_santa_clausable(NotSantaClaus.new), false
   end
 end

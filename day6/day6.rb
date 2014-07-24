@@ -6,13 +6,9 @@
 # get_squares(1..100) # => [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 def get_squares(array)
-  array.sort!.map! do |x|
-    x**(0.5) == Fixnum ? x : nil
-  end
-  array.compact!
+  array.select {|x| x % (Math.sqrt x) == 0}.sort.uniq
 end
 
-#Can't figure out how to determine if x is a whole number using either Math.sqrt(x) or the way I have it in the method.
 
 ######################
 # Define a class Conjurer with a class method conjure that takes two mandatory parameters: name and lambda.
@@ -25,11 +21,9 @@ end
 
 class Conjurer
   def self.conjure(name, lambda)
-
+    define_method(name,lambda)
   end
 end
-
-#http://apidock.com/ruby/Module/define_method
 
 ######################
 # Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string on the outside and the longer string on the inside. The strings will not be the same length, but they may be empty (length0).
